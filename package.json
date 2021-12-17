@@ -1,7 +1,7 @@
 {
   "name": "mt-webauthn-simple-server",
   "version": "1.0.0",
-  "description": "",
+  "description": "POC to show how webauthn can be integrated into a website.",
   "main": "server.js",
   "devDependencies": {
     "nodemon": "^2.0.15",
