@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <title>Macomber Tech Webauthn Demo</title>
+</head>
+<style type="text/css">
+.lbl { text-align: right; font-weight: bold; }
+</style>
+<body>
+    <table border="0" cellspacing="0" cellpadding="3">
+        <tbody>
+            <tr>
+                <td class="lbl">User ID:</td>
+                <td><input id="reg_userId" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="lbl">Username:</td>
+                <td><input id="reg_userName" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="lbl">Display Name:</td>
+                <td><input id="reg_displayName" type="text" /></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="lbl">
+                    <button id="reg_button">Register</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span id="reg_message" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr />
+    <table border="0" cellspacing="0" cellpadding="3">
+        <tbody>
+            <tr>
+                <td class="lbl">User ID:</td>
+                <td><input id="login_userId" type="text" /></td>
+            </tr>
+            <tr>
+                <td class="lbl" colspan="2">
+                    <button id="login_button">Login</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <span id="login_message" />
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+<script src="index.umd.min.js"></script>
+<script src="index.js"></script>
+</html>
