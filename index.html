@@ -1,16 +1,35 @@
 <!DOCTYPE html>
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Macomber Tech Webauthn Demo</title>
 </head>
 <style type="text/css">
+@media screen and (min-width: 800px) {
+    #container {
+        width: 500px;
+    }    
+}
+body { 
+	font-size: 1.05em;
+	line-height: 1.25em;
+	font-family: Lato, Arial;
+	background: #f9f9f9;
+	color: #555;
+}
+
+table {
+    width: 100%;
+}
+
 .lbl { text-align: right; font-weight: bold; }
 </style>
 <body>
+    <div id="container">
     <table border="0" cellspacing="0" cellpadding="3">
         <tbody>
             <tr>
-                <td class="lbl">User ID:</td>
+                <td class="lbl">User ID*:</td>
                 <td><input id="reg_userId" type="text" /></td>
             </tr>
             <tr>
@@ -29,6 +48,17 @@
             <tr>
                 <td colspan="2">
                     <span id="reg_message" />
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <ul>
+                        <li>User ID is required, the other fields only get used when dislpaying the authenticator message.  User id
+                            is meant to be a backend identifier, not necessarily known to the user.</li>
+                        <li>Click "Register" to start the registration process.</li>
+                        <li>Follow the on-screen instructions (whether it be on your desktop or your phone).</li>
+                        <li>If you got "Successfully registered" above, you can try to log in!</li>
+                    </ul>
                 </td>
             </tr>
         </tbody>
@@ -50,8 +80,23 @@
                     <span id="login_message" />
                 </td>
             </tr>
+            <tr>
+                <td colspan="2">
+                    <ul>
+                        <li>Once you've successfully registered above, you can try to log in.</li>
+                        <li>Remember you're using the *User ID* here, not the username.</li>
+                        <li>Click "Login" and follow the on-screen instructions.</li>
+                        <li>If you got "Logged in successfully" above, you win!</li>
+                        <li>...ok, maybe not "win", but you were able to "log in"!  This system doesn't actually log
+                            you in to anything, it's just the authentication process.  To further implement, you could
+                            start a session, or create a JWT, or something like that.  But this system and the code
+                            should be enough to give an idea of how to implement webauthn as an auth method.</li>
+                    </ul>
+                </td>
+            </tr>
         </tbody>
     </table>
+    </div>
 </body>
 <script src="index.umd.min.js"></script>
 <script src="index.js"></script>

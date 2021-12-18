@@ -8,7 +8,11 @@ const elemLoginMessage = document.getElementById("login_message");
 elemRegBegin.addEventListener("click", async () => {
     elemRegMessage.innerHTML = "";
 
-    const userId = document.getElementById("reg_userId").value;
+    const userId = String(document.getElementById("reg_userId").value).trim();
+    if (userId === "") {
+        elemRegMessage.innerHTML = "You need a user ID";
+        return false;
+    }
 
     const resp = await fetch("register/options", {
         "method": "POST", 
@@ -49,7 +53,11 @@ elemRegBegin.addEventListener("click", async () => {
 elemLoginBegin.addEventListener("click", async () => {
     elemLoginMessage.innerHTML = "";
 
-    const userId = document.getElementById("login_userId").value;
+    const userId = String(document.getElementById("login_userId").value).trim();
+    if (userId === "") {
+        elemLoginMessage.innerHTML = "You need a user ID";
+        return false;
+    }
 
     const resp = await fetch(`auth/options/${userId}`);
     const respJSON = await resp.json();
