@@ -11,7 +11,8 @@
   "scripts": {
     "build": "tsc --project ./ && cp index.* build",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.ts"
+    "start": "node build/server.js",
+    "dev-start": "nodemon server.ts"
   },
   "author": "Walter Macomber <walter@macomber.tech>",
   "license": "UNLICENSED",
